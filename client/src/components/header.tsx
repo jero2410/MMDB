@@ -59,10 +59,10 @@ export function Header() {
               },
             }}
           />
-          <Button component={Link} to="/Signup" variant="text">
+          <Button component={Link} to="/signup" variant="text">
             Sign up
           </Button>
-          <Button component={Link} to="/Login" variant="contained">
+          <Button component={Link} to="/login" variant="contained">
             Login
           </Button>
         </Stack>

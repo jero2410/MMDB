@@ -11,8 +11,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
-        <Route path="/Login" element={<LoginScreen />} />
-        <Route path="/Signup" element={<SignupScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/signup" element={<SignupScreen />} />
       </Routes>
     </>
   );
