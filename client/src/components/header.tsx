@@ -3,16 +3,6 @@ import { AppBar, Toolbar, Stack, FormControl } from "@mui/material";
 import { Link } from "react-router"
 
 export function Header() {
-
-
-    const handleHomeClick = (e) => {
-    // Check if the current pathname is already the home page
-    if (location.pathname === '/') {
-      e.preventDefault(); // Stop standard client-side routing
-      window.location.reload(); // Force browser refresh
-    }
-  };
-
   return (
     <AppBar
       position="static"
@@ -33,7 +23,7 @@ export function Header() {
           spacing={7}
           sx={{ alignItems: "center", flexWrap: "nowrap" }}
         >
-          <Link to={"/"} onClick={handleHomeClick}><img src="/src/assets/MMDB.svg" alt="Logo" style={{ height: "20" }} /></Link>
+          <Link to={"/"} ><img src="/src/assets/MMDB.svg" alt="Logo" style={{ height: "20" }} /></Link>
           <Stack direction="row" spacing={2}>
             <Button color="inherit">Home</Button>
             <Button color="inherit">Genre</Button>
