@@ -57,8 +57,8 @@ export function Header() {
               border: "1px solid #ccc",
             }}
           />
-          <Link to={"/Signup"}><Button variant="text">Sign up</Button></Link>
-          <Link to={"/Login"}><Button variant="contained">Login</Button></Link>
+          <Button component={Link} to="/Signup" variant="text">Sign up</Button>
+          <Button component={Link} to="/Login" variant="contained">Login</Button>
         </Stack>
       </Toolbar>
     </AppBar>
