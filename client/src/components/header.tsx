@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Stack, FormControl, TextField, Button } from "@mui/material";
+import { AppBar, Toolbar, Stack, TextField, Button } from "@mui/material";
 import { Link } from "react-router";
 
 export function Header() {
@@ -28,7 +28,6 @@ export function Header() {
           <Stack direction="row" spacing={2}>
             <Button color="inherit">Home</Button>
             <Button color="inherit">Genre</Button>
-            <FormControl size="small"></FormControl>
           </Stack>
         </Stack>
         {/* Center/Right Side: Search Input and Auth Buttons */}
