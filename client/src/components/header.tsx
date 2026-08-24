@@ -26,7 +26,7 @@ export function Header() {
             />
           </Link>
           <Stack direction="row" spacing={2}>
-            <Button color="inherit">Home</Button>
+            <Button component={Link} to="/" color="inherit">Home</Button>
             <Button color="inherit">Genre</Button>
           </Stack>
         </Stack>
