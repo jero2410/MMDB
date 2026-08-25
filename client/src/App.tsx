@@ -7,7 +7,6 @@ import { TermsScreen } from "./screens/TermsScreen";
 import { PrivacyPolicyScreen } from "./screens/PrivacyPolicyScreen";
 import { HelpScreen } from "./screens/HelpScreen";
 import { Header } from "./components/header";
-import { Route, Routes } from "react-router";
 import { HomeScreen } from "./screens/homeScreen";
 import { LoginScreen } from "./screens/loginScreen";
 import { SignupScreen } from "./screens/signupScreen";
@@ -26,10 +25,10 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
-        <Route path="/About" element={<AboutScreen />} />
-        <Route path="/Terms" element={<TermsScreen />} />
-        <Route path="/Privacy-Policy" element={<PrivacyPolicyScreen />} />
-        <Route path="/Help" element={<HelpScreen />} />
+        <Route path="/about" element={<AboutScreen />} />
+        <Route path="/terms" element={<TermsScreen />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
+        <Route path="/help" element={<HelpScreen />} />
       </Routes>
 
       <Box component="main" sx={{ flex: 1 }}>
@@ -38,3 +37,7 @@ function App() {
 
       <Footer />
     </Box>
+    )
+  }
+
+export default App
