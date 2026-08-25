@@ -1,4 +1,4 @@
-import { Typography, Container, Box, Button } from "@mui/material";
+import { Typography, Container, Box, Button, Pagination } from "@mui/material";
 import SortIcon from "@mui/icons-material/Sort";
 import { useFetch } from "../hooks/useFetch";
 import { MovieCard } from "../components/MovieCard";
@@ -80,13 +80,14 @@ export function MoviesList() {
   };
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           mb: 4,
+          flexWrap: "wrap",
         }}
       >
         <Typography
@@ -125,7 +126,7 @@ export function MoviesList() {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "center",
+          justifyContent: "space-between",
           gap: 3,
         }}
       >
@@ -133,6 +134,28 @@ export function MoviesList() {
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </Box>
+      <Box sx={{justifyItems:"center"}}>
+      <Pagination
+          count={10}
+          siblingCount={1}
+          boundaryCount={0}
+          variant="outlined"
+          shape="rounded"
+          size="large"
+          sx={{
+            "& .MuiPaginationItem-root.Mui-selected": {
+              backgroundColor: "#fff",
+              borderColor:"#418CFB",
+              color: "#418CFB",
+              fontWeight: 'bold',
+              my:10,
+              "&:hover": {
+                backgroundColor: "#115293",
+              },
+            },
+          }}
+        />
+        </Box>
     </Container>
   );
 }
