@@ -7,7 +7,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
     <Card
       sx={{
         height: "556px",
-        width: "333px",
+        width: "350px",
         borderRadius: 1,
         overflow: "hidden",
         gap: "23px",
