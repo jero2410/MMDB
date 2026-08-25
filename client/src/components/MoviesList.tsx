@@ -24,21 +24,21 @@ export function MoviesList() {
     data: [
       {
         id: 1,
-        title: "Arrival",
-        poster_url: "https://picsum.photos/seed/mmdb-movie-1/400/600",
-        release_year: 2016,
+        title: "The Odyssey",
+        poster_url: "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        release_year: 2026,
       },
       {
         id: 2,
-        title: "Whiplash",
-        poster_url: "https://picsum.photos/seed/mmdb-movie-2/400/600",
-        release_year: 2014,
+        title: "Spider-Man: Brand New Day",
+        poster_url: "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        release_year: 2026,
       },
       {
         id: 3,
-        title: "Parasite",
-        poster_url: "https://picsum.photos/seed/mmdb-movie-3/400/600",
-        release_year: 2019,
+        title: "Avatar: Fire and Ash",
+        poster_url: "https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        release_year: 2025,
       },
       {
         id: 4,
@@ -48,9 +48,9 @@ export function MoviesList() {
       },
       {
         id: 5,
-        title: "Get Out",
-        poster_url: "https://picsum.photos/seed/mmdb-movie-5/400/600",
-        release_year: 2017,
+        title: "Superman",
+        poster_url: "https://m.media-amazon.com/images/M/MV5BOGMwZGJiM2EtMzEwZC00YTYzLWIxNzYtMmJmZWNlZjgxZTMwXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+        release_year: 2025,
       },
       {
         id: 6,
@@ -66,9 +66,9 @@ export function MoviesList() {
       },
       {
         id: 8,
-        title: "Spirited Away",
-        poster_url: "https://picsum.photos/seed/mmdb-movie-8/400/600",
-        release_year: 2001,
+        title: "F1",
+        poster_url: "https://m.media-amazon.com/images/M/MV5BNGI0MDI4NjEtOWU3ZS00ODQyLWFhYTgtNGYxM2ZkM2Q2YjE3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+        release_year: 2025,
       },
     ],
     pagination: {

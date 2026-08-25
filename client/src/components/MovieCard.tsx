@@ -9,8 +9,8 @@ export function MovieCard({ movie }: { movie: Movie }) {
         height: "556px",
         width: "350px",
         borderRadius: 1,
-        overflow: "hidden",
         gap: "23px",
+        boxShadow:0,
         "&:hover": {
           boxShadow: 6,
           cursor: "pointer",
