@@ -1,12 +1,11 @@
-import { useState } from 'react'
+import { MoviesList } from './components/MoviesList'
 import './App.css'
 
 function App() {
 
   return (
     <>
-    
-            
+    <MoviesList/>     
     </>
   )
 }
