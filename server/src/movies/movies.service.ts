@@ -32,11 +32,11 @@ export class MoviesService {
     });
 
     return {
-      data: movies.map((movie) => ({
+      movies: movies.map((movie) => ({
         id: movie.id,
         title: movie.title,
-        poster: movie.poster_url,
-        releaseYear: movie.release_year,
+        poster_url: movie.poster_url,
+        release_year: movie.release_year,
       })),
 
       pagination: {
