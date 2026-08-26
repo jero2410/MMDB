@@ -1,5 +1,5 @@
 import { Typography, Container, Box, Button, Pagination } from "@mui/material";
-import SortIcon from "@mui/icons-material/Sort";
+import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 import { useFetch } from "../hooks/useFetch";
 import { MovieCard } from "../components/MovieCard";
 import type { Movie } from "../types/movie.type";
@@ -94,8 +94,8 @@ export function MoviesList() {
           variant="h4"
           component="h2"
           sx={{
-            fontWeight: "bold",
-            color: "#1A2C59",
+            fontWeight: "semibold",
+            color: "#003055",
           }}
         >
           All Movies
@@ -103,10 +103,12 @@ export function MoviesList() {
 
         <Button
           variant="outlined"
-          startIcon={<SortIcon />}
+          startIcon={<FilterListRoundedIcon />}
+          size="large"
           sx={{
             borderRadius: "70px",
             color: "#68768a",
+            borderColor:"#E5E5E5",
             textTransform: "none",
 
             "& .MuiButton-startIcon": {
