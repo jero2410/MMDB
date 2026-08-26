@@ -30,22 +30,22 @@ export function Footer() {
             flexWrap: "wrap", // Wraps nicely on mobile screens
           }}
         >
-          <Button component={Link} to="/About" variant="text" color="inherit">
+          <Button component={Link} to="/about" variant="text" color="inherit">
             {" "}
             About{" "}
           </Button>
-          <Button component={Link} to="/Terms" variant="text" color="inherit">
+          <Button component={Link} to="/terms" variant="text" color="inherit">
             Terms of use
           </Button>
           <Button
             component={Link}
-            to="/Privacy-Policy"
+            to="/privacy-policy"
             variant="text"
             color="inherit"
           >
             Privacy Policy
           </Button>
-          <Button component={Link} to="/Help" variant="text" color="inherit">
+          <Button component={Link} to="/help" variant="text" color="inherit">
             Help
           </Button>
         </Container>
