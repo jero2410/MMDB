@@ -16,8 +16,8 @@ export class User {
   @Column({ type: 'text', nullable: false })
   display_name: string;
 
-  @Column({ type: 'text', nullable: false })
-  password_hash: string;
+  @Column({ type: 'text', nullable: false, name: 'password_hash' })
+  hashed_password: string;
 
   @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
