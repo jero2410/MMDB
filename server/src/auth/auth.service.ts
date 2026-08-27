@@ -7,10 +7,15 @@ import * as bcrypt from 'bcrypt';
 import { UsersService } from '../users/users.service';
 import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
+import { JwtService } from '@nestjs/jwt';
+import { JwtPayload } from './interfaces/jwtPayload.interface';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly jwtService: JwtService,
+  ) {}
 
   async signup(signupDto: SignupDto) {
     const { first_name, last_name, email, password } = signupDto;
@@ -53,11 +58,24 @@ export class AuthService {
     }
 
     const isMatch = await bcrypt.compare(password, user.hashed_password);
+
     if (!isMatch) {
       throw new UnauthorizedException('Invalid email or password');
     }
+
+    const payload: JwtPayload = {
+      sub: user.id,
+      email: user.email,
+      rememberMe: loginDto.rememberMe,
+    };
+
+    const accessToken = await this.jwtService.signAsync(payload, {
+      expiresIn: loginDto.rememberMe ? '30d' : '15m',
+    });
+
     return {
       message: 'Login successful',
+      access_token: accessToken,
       user: {
         id: user.id,
         name: user.display_name,
