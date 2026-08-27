@@ -26,5 +26,5 @@ export class LoginDto {
         'Password must be at least 8 characters and include uppercase, lowercase, number, and symbol.',
     },
   )
-  input_password: string;
+  password: string;
 }

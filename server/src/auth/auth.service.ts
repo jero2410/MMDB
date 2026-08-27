@@ -45,14 +45,14 @@ export class AuthService {
   }
 
   async login(loginDto: LoginDto) {
-    const { email, input_password } = loginDto;
+    const { email, password } = loginDto;
     const user = await this.usersService.findByEmail(email);
 
     if (!user) {
       throw new ConflictException('Invalid email or password');
     }
 
-    const isMatch = await bcrypt.compare(input_password, user.hashed_password);
+    const isMatch = await bcrypt.compare(password, user.hashed_password);
     if (!isMatch) {
       throw new UnauthorizedException('Invalid email or password');
     }
