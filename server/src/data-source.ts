@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 import { DataSourceOptions, DataSource } from 'typeorm';
 import { Movie } from './movies/entities/movies.entity';
+import { User } from './users/entities/users.entity';
 
 config();
 
@@ -11,7 +12,7 @@ export const dataSourceOptions: DataSourceOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABSAE,
-  entities: [Movie],
+  entities: [Movie, User],
   synchronize: false,
   logging: true,
   migrations: [__dirname + '/migrations/**/*.ts'],
