@@ -1,3 +1,5 @@
+import { MoviesList } from "../components/MoviesList";
+
 export function HomeScreen(){
-    return <p>Home page</p>
+    return <MoviesList />
 }
