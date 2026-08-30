@@ -21,23 +21,21 @@ function App() {
       }}
     >
       <Header />
-      <Routes> 
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
-        <Route path="/signup" element={<SignupScreen />} />
-        <Route path="/about" element={<AboutScreen />} />
-        <Route path="/terms" element={<TermsScreen />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
-        <Route path="/help" element={<HelpScreen />} />
-      </Routes>
 
-      <Box component="main" sx={{ flex: 1 }}>
-        {/* Your page content */}
+      <Box sx={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/signup" element={<SignupScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/terms" element={<TermsScreen />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
+          <Route path="/help" element={<HelpScreen />} />
+        </Routes>
       </Box>
-
       <Footer />
     </Box>
-    )
-  }
+  );
+}
 
-export default App
+export default App;
