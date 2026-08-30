@@ -3,7 +3,9 @@ import {
   Column,
   PrimaryGeneratedColumn,
   CreateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { Review } from '../../reviews/entities/reviews.entity';
 
 @Entity('users')
 export class User {
@@ -21,4 +23,7 @@ export class User {
 
   @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
+
+  @OneToMany(() => Review, (review) => review.user)
+  reviews: Review[];
 }
