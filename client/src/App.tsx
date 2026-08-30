@@ -10,6 +10,7 @@ import { Header } from "./components/header";
 import { HomeScreen } from "./screens/homeScreen";
 import { LoginScreen } from "./screens/loginScreen";
 import { SignupScreen } from "./screens/signupScreen";
+import { MovieDetails } from "./components/MovieDetails";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/terms" element={<TermsScreen />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
           <Route path="/help" element={<HelpScreen />} />
+          <Route path="/movie-details" element={<MovieDetails />} />
         </Routes>
       </Box>
       <Footer />

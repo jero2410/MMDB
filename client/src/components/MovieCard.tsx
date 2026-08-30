@@ -1,10 +1,13 @@
 import type { Movie } from "../types/movie.type";
 import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import { Link } from "react-router";
 
 export function MovieCard({ movie }: { movie: Movie }) {
   return (
     <Card
+    component={Link}
+    to={'/movie-details'}
       sx={{
         height: "556px",
         width: "350px",
