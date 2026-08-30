@@ -1,3 +1,6 @@
+body {
+    margin: 0px;
+}
 html, body, #root {
   background-color: #F8F8F8; 
 }
