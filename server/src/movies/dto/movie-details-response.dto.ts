@@ -4,7 +4,6 @@ import { MovieGenreResponseDto } from './movie-genre-response.dto';
 import { MovieReviewResponseDto } from './movie-review-response.dto';
 
 export class MovieDetailsResponseDto {
-  id: number;
   uuid: string;
   title: string;
   overview: string;
@@ -13,7 +12,6 @@ export class MovieDetailsResponseDto {
   release_year: number;
   runtime_minutes: number;
   language: string;
-
   movieCast: MovieCastResponseDto[];
   movieCrew: MovieCrewResponseDto[];
   movieGenres: MovieGenreResponseDto[];

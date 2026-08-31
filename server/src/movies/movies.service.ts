@@ -124,6 +124,8 @@ export class MoviesService {
     if (!movie) {
       throw new NotFoundException('Movie not found');
     }
-    return movie;
+    const { id, ...movieDetails } = movie;
+
+    return movieDetails;
   }
 }
