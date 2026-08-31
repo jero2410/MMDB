@@ -1,31 +1,22 @@
-import {
-  Typography,
-  Container,
-  Box,
-  Button,
-  Pagination,
-} from "@mui/material";
+import { Typography, Container, Box, Button, Pagination } from "@mui/material";
 import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 import { useState } from "react";
-import { useFetch } from "../hooks/useFetch";
+import { useMovies } from "../hooks/useMovies";
 import { MovieCard } from "../components/MovieCard";
-import type { MoviesResponse } from "../types/moviesResponse.type";
 
 export function MoviesList() {
   const [page, setPage] = useState(1);
-  const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+  const { data, isLoading, isError, error } = useMovies(page, 8);
 
-  const { status, error, data } = useFetch<MoviesResponse>(`${BASE_URL}/movies?page=${page}&limit=8`);
-
-  if (status === "loading") {
+  if (isLoading) {
     return <p>Loading...</p>;
   }
 
-  if (status === "error") {
+  if (isError) {
     return <p>Error: {error.message}</p>;
   }
 
-  if (status === "empty") {
+  if (!data || data.movies.length === 0) {
     return <p>No movies found.</p>;
   }
 
