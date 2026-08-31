@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Query, Param } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { MovieQueryDto } from './dto/MoviePagination.dto';
 
