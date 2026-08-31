@@ -27,6 +27,9 @@ export class Review {
   rating: number;
 
   @Column({ type: 'text', nullable: true })
+  title: string;
+
+  @Column({ type: 'text', nullable: true })
   body: string;
 
   @CreateDateColumn({
