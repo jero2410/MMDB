@@ -32,4 +32,7 @@ export class Movie {
 
   @Column({ type: 'text', nullable: true })
   language: string;
+
+  @Column({ type: 'int', nullable: true })
+  average_rating: number;
 }

@@ -12,4 +12,7 @@ export class MovieCardDto {
 
   @Expose({ name: 'release_year' })
   releaseYear: number;
+
+  @Expose({ name: 'average_rating' })
+  averageRating: number;
 }
