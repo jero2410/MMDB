@@ -1,5 +1,8 @@
-export type State<T> =
-  | { status: "loading"; data?: undefined; error?: undefined }
-  | { status: "error"; error: Error; data?: undefined }
-  | { status: "empty"; data?: undefined; error?: undefined }
-  | { status: "ready"; data: T; error?: undefined };
+export const Status = {
+  Loading: "loading",
+  Error: "error",
+  Empty: "empty",
+  Ready: "ready",
+} as const;
+
+export type Status = (typeof Status)[keyof typeof Status];
