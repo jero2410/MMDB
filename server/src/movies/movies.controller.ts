@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, Param, ParseIntPipe } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { MovieQueryDto } from './dto/MoviePagination.dto';
 
@@ -9,5 +9,10 @@ export class MoviesController {
   @Get()
   async findAllMovies(@Query() queryDto: MovieQueryDto) {
     return this.moviesService.findAllMovies(queryDto);
+  }
+
+  @Get(':uuid')
+  findOne(@Param('uuid') uuid: string) {
+    return this.moviesService.findOne(uuid);
   }
 }
