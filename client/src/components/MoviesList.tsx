@@ -13,10 +13,9 @@ import type { MoviesResponse } from "../types/moviesResponse.type";
 
 export function MoviesList() {
   const [page, setPage] = useState(1);
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
-  const { status, error, data } = useFetch<MoviesResponse>(
-    `http://localhost:3000/movies?page=${page}&limit=8`
-  );
+  const { status, error, data } = useFetch<MoviesResponse>(`${BASE_URL}/movies?page=${page}&limit=8`);
 
   if (status === "loading") {
     return <p>Loading...</p>;
