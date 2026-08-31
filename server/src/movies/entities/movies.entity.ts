@@ -37,6 +37,14 @@ export class Movie {
   @Column({ type: 'text', nullable: true })
   language: string;
 
+  @Column({
+    type: 'numeric',
+    precision: 2,
+    scale: 1,
+    default: 0.0,
+  })
+  average_rating: number;
+
   @OneToMany(() => Review, (review) => review.movie)
   reviews: Review[];
 

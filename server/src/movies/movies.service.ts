@@ -38,6 +38,7 @@ export class MoviesService {
         title: movie.title,
         poster_url: movie.poster_url,
         release_year: movie.release_year,
+        average_rating: movie.average_rating,
       })),
 
       pagination: {
