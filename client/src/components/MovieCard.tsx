@@ -6,14 +6,14 @@ import { Link } from "react-router";
 export function MovieCard({ movie }: { movie: Movie }) {
   return (
     <Card
-    component={Link}
-    to={'/movie-details'}
+      component={Link}
+      to={`/movies/${movie.uuid}`}
       sx={{
         height: "556px",
         width: "350px",
         borderRadius: 1,
         gap: "23px",
-        boxShadow:0,
+        boxShadow: 0,
         "&:hover": {
           boxShadow: 6,
           cursor: "pointer",
@@ -45,14 +45,16 @@ export function MovieCard({ movie }: { movie: Movie }) {
           <StarRoundedIcon sx={{ color: "#FEB600" }} />
           <Typography sx={{ fontWeight: "bold", color:"#1A2C59" }}>{movie.average_rating}</Typography>
         </Box>
-        <Typography variant="h6" component="h3" noWrap sx={{ fontWeight:"bold" ,color:"#1A2C59"}}>
+        <Typography
+          variant="h6"
+          component="h3"
+          noWrap
+          sx={{ fontWeight: "bold", color: "#1A2C59" }}
+        >
           {movie.title}
         </Typography>
 
-        <Typography
-          variant="body2"
-          sx={{ mt: 1, mb: 2, color:"#7C7C7C" }}
-        >
+        <Typography variant="body2" sx={{ mt: 1, mb: 2, color: "#7C7C7C" }}>
           {movie.release_year}
         </Typography>
       </CardContent>
