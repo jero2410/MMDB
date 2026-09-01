@@ -84,6 +84,8 @@ export class MoviesService {
         },
 
         movieGenres: {
+          movie_id: true,
+          genre_id: true,
           genre: {
             id: true,
             name: true,
