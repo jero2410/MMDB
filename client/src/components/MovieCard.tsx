@@ -43,7 +43,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
           <StarRoundedIcon sx={{ color: "#FEB600" }} />
-          <Typography sx={{ fontWeight: "bold", color:"#1A2C59" }}>7.8</Typography>
+          <Typography sx={{ fontWeight: "bold", color:"#1A2C59" }}>{movie.average_rating}</Typography>
         </Box>
         <Typography variant="h6" component="h3" noWrap sx={{ fontWeight:"bold" ,color:"#1A2C59"}}>
           {movie.title}

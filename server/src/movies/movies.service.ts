@@ -1,46 +1,32 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Repository, ILike } from 'typeorm';
-import { Movie } from './entities/movies.entity';
-import { InjectRepository } from '@nestjs/typeorm';
-import { MovieQueryDto } from './dto/MoviePagination.dto';
 import { MovieDetailsResponseDto } from './dto/movie-details-response.dto';
+import { plainToInstance } from 'class-transformer';
+import { MoviesRepository } from './movies.repository';
+import { MovieQueryDto } from './dto/movie-query.dto';
+import { MovieCardDto } from './dto/movie-card.dto';
+import { MovieListResponseDto } from './dto/movie-list-response.dto';
 
 @Injectable()
 export class MoviesService {
-  constructor(
-    @InjectRepository(Movie)
-    private moviesRepository: Repository<Movie>,
-  ) {}
+  constructor(private readonly moviesRepository: MoviesRepository) {}
 
-  async findAllMovies(queryDto: MovieQueryDto) {
+  async findAllMovies(queryDto: MovieQueryDto): Promise<MovieListResponseDto> {
     const { search, page, limit } = queryDto;
 
     const skip = (page - 1) * limit;
 
-    const [movies, total] = await this.moviesRepository.findAndCount({
-      where: search?.trim()
-        ? {
-            title: ILike(`%${search.trim()}%`),
-          }
-        : undefined,
-
+    const [movies, total] = await this.moviesRepository.findPaginated({
+      search: search?.trim(),
       skip,
       take: limit,
+    });
 
-      order: {
-        id: 'ASC',
-      },
+    const movieCards = plainToInstance(MovieCardDto, movies, {
+      excludeExtraneousValues: true,
     });
 
     return {
-      movies: movies.map((movie) => ({
-        uuid: movie.uuid,
-        title: movie.title,
-        poster_url: movie.poster_url,
-        release_year: movie.release_year,
-        average_rating: movie.average_rating,
-      })),
-
+      movies: movieCards,
       pagination: {
         page,
         limit,
