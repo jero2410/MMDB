@@ -64,6 +64,7 @@ export class MoviesService {
         release_year: true,
         runtime_minutes: true,
         language: true,
+        average_rating: true,
 
         movieCast: {
           character_name: true,
