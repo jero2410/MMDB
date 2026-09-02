@@ -14,6 +14,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
         borderRadius: 1,
         gap: "23px",
         boxShadow: 0,
+        textDecoration:'none',
         "&:hover": {
           boxShadow: 6,
           cursor: "pointer",
