@@ -1,0 +1,106 @@
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class SeedUsers1756210000000 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
+      INSERT INTO users (email, display_name, password_hash)
+      VALUES
+        ('mira.ibrahim.1@example.com', 'Mira Ibrahim', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('hugo.brennan.2@example.com', 'Hugo Brennan', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('tariq.andersson.3@example.com', 'Tariq Andersson', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('rafael.costa.4@example.com', 'Rafael Costa', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('milos.petrov.5@example.com', 'Milos Petrov', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('dmitri.yamamoto.6@example.com', 'Dmitri Yamamoto', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('mira.moreau.7@example.com', 'Mira Moreau', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('dmitri.dubois.8@example.com', 'Dmitri Dubois', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('mira.ibrahim.9@example.com', 'Mira Ibrahim', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('bruno.oyelowo.10@example.com', 'Bruno Oyelowo', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('mei.delgado.11@example.com', 'Mei Delgado', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('greta.kowalski.12@example.com', 'Greta Kowalski', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('greta.marchetti.13@example.com', 'Greta Marchetti', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('kofi.nakamura.14@example.com', 'Kofi Nakamura', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('amara.novak.15@example.com', 'Amara Novak', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('hassan.ferreira.16@example.com', 'Hassan Ferreira', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('yara.dubois.17@example.com', 'Yara Dubois', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('elias.moreau.18@example.com', 'Elias Moreau', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('bruno.ferreira.19@example.com', 'Bruno Ferreira', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('rosa.petrov.20@example.com', 'Rosa Petrov', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('ingrid.nasser.21@example.com', 'Ingrid Nasser', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('leila.sandoval.22@example.com', 'Leila Sandoval', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('yara.rahman.23@example.com', 'Yara Rahman', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('priya.andersson.24@example.com', 'Priya Andersson', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('yuki.nasser.25@example.com', 'Yuki Nasser', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('casper.adeyemi.26@example.com', 'Casper Adeyemi', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('kwame.okafor.27@example.com', 'Kwame Okafor', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('kofi.haddad.28@example.com', 'Kofi Haddad', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('hassan.andersson.29@example.com', 'Hassan Andersson', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('rafael.mbeki.30@example.com', 'Rafael Mbeki', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('noor.bergstrom.31@example.com', 'Noor Bergstrom', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('bruno.marchetti.32@example.com', 'Bruno Marchetti', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('solveig.sandoval.33@example.com', 'Solveig Sandoval', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('viktor.castellanos.34@example.com', 'Viktor Castellanos', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('idris.volkov.35@example.com', 'Idris Volkov', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('viktor.silva.36@example.com', 'Viktor Silva', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('lena.lindqvist.37@example.com', 'Lena Lindqvist', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('greta.dubois.38@example.com', 'Greta Dubois', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('camille.nasser.39@example.com', 'Camille Nasser', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('freya.sandoval.40@example.com', 'Freya Sandoval', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('oskar.petrov.41@example.com', 'Oskar Petrov', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('rosa.fischer.42@example.com', 'Rosa Fischer', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('idris.marchetti.43@example.com', 'Idris Marchetti', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy'),
+        ('nadia.volkov.44@example.com', 'Nadia Volkov', '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy');
+    `);
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
+      DELETE FROM users
+      WHERE email IN (
+        'mira.ibrahim.1@example.com',
+        'hugo.brennan.2@example.com',
+        'tariq.andersson.3@example.com',
+        'rafael.costa.4@example.com',
+        'milos.petrov.5@example.com',
+        'dmitri.yamamoto.6@example.com',
+        'mira.moreau.7@example.com',
+        'dmitri.dubois.8@example.com',
+        'mira.ibrahim.9@example.com',
+        'bruno.oyelowo.10@example.com',
+        'mei.delgado.11@example.com',
+        'greta.kowalski.12@example.com',
+        'greta.marchetti.13@example.com',
+        'kofi.nakamura.14@example.com',
+        'amara.novak.15@example.com',
+        'hassan.ferreira.16@example.com',
+        'yara.dubois.17@example.com',
+        'elias.moreau.18@example.com',
+        'bruno.ferreira.19@example.com',
+        'rosa.petrov.20@example.com',
+        'ingrid.nasser.21@example.com',
+        'leila.sandoval.22@example.com',
+        'yara.rahman.23@example.com',
+        'priya.andersson.24@example.com',
+        'yuki.nasser.25@example.com',
+        'casper.adeyemi.26@example.com',
+        'kwame.okafor.27@example.com',
+        'kofi.haddad.28@example.com',
+        'hassan.andersson.29@example.com',
+        'rafael.mbeki.30@example.com',
+        'noor.bergstrom.31@example.com',
+        'bruno.marchetti.32@example.com',
+        'solveig.sandoval.33@example.com',
+        'viktor.castellanos.34@example.com',
+        'idris.volkov.35@example.com',
+        'viktor.silva.36@example.com',
+        'lena.lindqvist.37@example.com',
+        'greta.dubois.38@example.com',
+        'camille.nasser.39@example.com',
+        'freya.sandoval.40@example.com',
+        'oskar.petrov.41@example.com',
+        'rosa.fischer.42@example.com',
+        'idris.marchetti.43@example.com',
+        'nadia.volkov.44@example.com'
+      );
+    `);
+  }
+}
