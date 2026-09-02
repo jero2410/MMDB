@@ -6,13 +6,15 @@ import {
   ManyToOne,
   JoinColumn,
   Check,
+  Unique,
 } from 'typeorm';
 
 import { Movie } from '../../movies/entities/movies.entity';
 import { User } from '../../users/entities/users.entity';
 
 @Entity('reviews')
-@Check(`"rating" >= 1 AND "rating" <= 10`)
+@Check(`"rating" IS NULL OR ("rating" >= 1 AND "rating" <= 10)`)
+@Unique(['movie_id', 'user_id'])
 export class Review {
   @PrimaryGeneratedColumn({ type: 'int' })
   id: number;
