@@ -70,7 +70,7 @@ export function MoviesList() {
         }}
       >
         {data.movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard key={movie.uuid} movie={movie} />
         ))}
       </Box>
 
