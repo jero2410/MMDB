@@ -37,4 +37,11 @@ export class MoviesRepository {
   findOne(options: FindOneOptions<Movie>) {
     return this.repository.findOne(options);
   }
+  async findOneByUuid(uuid: string): Promise<Movie | null> {
+    return this.repository.findOne({
+      where: {
+        uuid,
+      },
+    });
+  }
 }
