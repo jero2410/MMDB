@@ -2,17 +2,17 @@ import { Expose } from 'class-transformer';
 
 export class MovieCardDto {
   @Expose()
-  id: number;
+  uuid: string;
 
   @Expose()
   title: string;
 
-  @Expose({ name: 'poster_url' })
-  posterUrl: string;
+  @Expose()
+  poster_url: string;
 
-  @Expose({ name: 'release_year' })
-  releaseYear: number;
+  @Expose()
+  release_year: number;
 
-  @Expose({ name: 'average_rating' })
-  averageRating: number;
+  @Expose()
+  average_rating: number;
 }
