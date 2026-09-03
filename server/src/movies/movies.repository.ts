@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ILike, Repository } from 'typeorm';
+import { ILike, Repository, FindOneOptions } from 'typeorm';
 import { Movie } from './entities/movies.entity';
 
 interface FindPaginatedOptions {
@@ -29,7 +29,18 @@ export class MoviesRepository {
 
       order: {
         release_year: 'DESC',
-        id: 'ASC',
+        uuid: 'ASC',
+      },
+    });
+  }
+
+  findOne(options: FindOneOptions<Movie>) {
+    return this.repository.findOne(options);
+  }
+  async findOneByUuid(uuid: string): Promise<Movie | null> {
+    return this.repository.findOne({
+      where: {
+        uuid,
       },
     });
   }

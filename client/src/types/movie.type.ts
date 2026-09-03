@@ -1,5 +1,5 @@
 export type Movie = {
-  id: number;
+  uuid: string;
   title: string;
   poster_url: string ;
   release_year: number | null;

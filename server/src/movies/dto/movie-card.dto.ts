@@ -2,7 +2,7 @@ import { Expose } from 'class-transformer';
 
 export class MovieCardDto {
   @Expose()
-  id: number;
+  uuid: string;
 
   @Expose()
   title: string;

@@ -3,10 +3,19 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './data-source';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 import { MoviesModule } from './movies/movies.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(dataSourceOptions), MoviesModule],
+  imports: [
+    TypeOrmModule.forRoot(dataSourceOptions),
+    MoviesModule,
+    UsersModule,
+    AuthModule,
+    ReviewsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,6 +1,6 @@
 import type { Movie } from "./movie.type";
 
-export type MoviesResponse = {
+export type MoviesListResponse = {
   movies: Movie[];
   pagination: {
     page: number;
