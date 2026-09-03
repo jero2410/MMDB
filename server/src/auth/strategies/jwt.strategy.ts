@@ -19,7 +19,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       // Reject tokens that have passed their expiration date
       ignoreExpiration: false,
 
-      // The secret key used to sign the token (keep this safe in environment variables)
+      // The secret key used to sign the token
       secretOrKey: jwtSecret,
     });
   }

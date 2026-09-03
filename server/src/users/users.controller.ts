@@ -2,28 +2,33 @@ import {
   Controller,
   Get,
   Param,
-  ParseIntPipe,
   Post,
   HttpCode,
   HttpStatus,
   Body,
   Query,
+  ParseUUIDPipe,
+  UseInterceptors,
+  ClassSerializerInterceptor,
 } from '@nestjs/common';
-import { User } from './entities/users.entity';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto//createUser.dto';
+import { UserResponseDto } from './dto/UserResponse.dto';
 
 @Controller('users')
+@UseInterceptors(ClassSerializerInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Get(':id')
-  findById(@Param('id', ParseIntPipe) id: number): Promise<User> {
-    return this.usersService.findById(id);
+  @Get(':uuid')
+  findById(
+    @Param('uuid', ParseUUIDPipe) uuid: string,
+  ): Promise<UserResponseDto> {
+    return this.usersService.findById(uuid);
   }
 
   @Get()
-  findByEmail(@Query('email') email: string): Promise<User | null> {
+  findByEmail(@Query('email') email: string): Promise<UserResponseDto | null> {
     return this.usersService.findByEmail(email);
   }
 

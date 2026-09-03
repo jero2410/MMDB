@@ -10,6 +10,13 @@ export class User {
   @PrimaryGeneratedColumn({ type: 'int' })
   public id: number;
 
+  @Column({
+    type: 'uuid',
+    unique: true,
+    generated: 'uuid',
+  })
+  uuid: string;
+
   @Column({ type: 'text', nullable: false, unique: true })
   email: string;
 

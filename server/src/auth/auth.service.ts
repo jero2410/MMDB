@@ -9,6 +9,8 @@ import { SignupDto } from './dto/signup.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './interfaces/jwtPayload.interface';
+import { SignupResponse } from './dto/signupResponse.dto';
+import { LoginResponse } from './dto/loginResponse.dto';
 
 @Injectable()
 export class AuthService {
@@ -17,7 +19,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async signup(signupDto: SignupDto) {
+  async signup(signupDto: SignupDto): Promise<SignupResponse> {
     const { first_name, last_name, email, password } = signupDto;
 
     // Check if email already exists
@@ -42,14 +44,14 @@ export class AuthService {
     return {
       message: 'Signup successful',
       user: {
-        id: user.id,
+        uuid: user.uuid,
         name: user.display_name,
         email: user.email,
       },
     };
   }
 
-  async login(loginDto: LoginDto) {
+  async login(loginDto: LoginDto): Promise<LoginResponse> {
     const { email, password } = loginDto;
     const user = await this.usersService.findByEmail(email);
 
@@ -77,7 +79,7 @@ export class AuthService {
       message: 'Login successful',
       access_token: accessToken,
       user: {
-        id: user.id,
+        uuid: user.uuid,
         name: user.display_name,
         email: user.email,
       },

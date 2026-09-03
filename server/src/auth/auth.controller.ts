@@ -12,6 +12,8 @@ import { LoginDto } from './dto/login.dto';
 import { AuthService } from './auth.service';
 import { SignupDto } from './dto/signup.dto';
 import { JwtAuthGuard } from './guards/jwt.guard';
+import { CurrentUser } from './decorators/currentUser.decorator';
+import type { JwtPayload } from './interfaces/jwtPayload.interface';
 
 @Controller('auth')
 export class AuthController {
@@ -19,8 +21,8 @@ export class AuthController {
 
   @Post('signup')
   @HttpCode(HttpStatus.CREATED) // Returns 201 Created
-  create(@Body() SignupDto: SignupDto) {
-    return this.authService.signup(SignupDto);
+  create(@Body() signupDto: SignupDto) {
+    return this.authService.signup(signupDto);
   }
 
   @Post('login')
@@ -31,10 +33,10 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Get('profile')
-  getProfile(@Request() req) {
+  getProfile(@CurrentUser() user: JwtPayload) {
     return {
       message: 'authorised',
-      user: req.user,
+      user: user,
     };
   }
 }
